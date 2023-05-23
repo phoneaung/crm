@@ -1,10 +1,10 @@
 Todolist
 -DONE Create virtual environment, install django and create project
--Base pages / templates
+-DONE Base pages / templates
     -DONE Create app for pages
     -DONE Create base templates
-    -Create front pages
-    -Create about page
+    -DONE Create front pages
+    -DONE Create about page
 -Authentication
 -Simple dashboard
 -Create new leads
