@@ -1,0 +1,16 @@
+Todolist
+-DONE Create virtual environment, install django and create project
+-Base pages / templates
+    -DONE Create app for pages
+    -DONE Create base templates
+    -Create front pages
+    -Create about page
+-Authentication
+-Simple dashboard
+-Create new leads
+-Change and delete leads
+-Convert leads to clients
+-Change and delete clients
+-Implement solution for teams
+-Implement a payment solution / Monthly recurring payments
+-Deploy
