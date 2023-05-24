@@ -6,6 +6,10 @@ Todolist
     -DONE Create front pages
     -DONE Create about page
 -Authentication
+    -DONE Create database model for userprofiles
+    -Make it possible to sign up
+    -Make it possible to log in
+    -Make it possible to log out
 -Simple dashboard
 -Create new leads
 -Change and delete leads
