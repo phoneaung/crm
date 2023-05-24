@@ -10,7 +10,7 @@ Todolist
     -DONE Make it possible to sign up
     -DONE Make it possible to log in
     -DONE Make it possible to log out
--Simple dashboard
+-DONE Simple dashboard
 -Create new leads
 -Change and delete leads
 -Convert leads to clients
