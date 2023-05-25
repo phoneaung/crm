@@ -5,7 +5,7 @@ Todolist
     -DONE Create base templates
     -DONE Create front pages
     -DONE Create about page
--Authentication
+-DONE Authentication
     -DONE Create database model for userprofiles
     -DONE Make it possible to sign up
     -DONE Make it possible to log in
@@ -13,7 +13,7 @@ Todolist
 -DONE Simple dashboard
 -Create new leads
     -DONE New django app
-    -Database models
+    -DONE Database models
     -Views/Forms for leads
     -List out leads
     -View detail page of leads
