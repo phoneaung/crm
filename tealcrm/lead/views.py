@@ -1,10 +1,10 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 
 from .forms import AddLeadForm
 from .models import Lead
 
-
+# shows the list of all the leads created by user
 @login_required
 def leads_list(request):
     leads = Lead.objects.filter(created_by=request.user)
@@ -13,6 +13,16 @@ def leads_list(request):
         'leads': leads
     })
 
+# show the details of the lead
+@login_required
+def leads_detail(request, pk):
+    lead = get_object_or_404(Lead, created_by=request.user, pk=pk)
+
+    return render(request, 'lead/leads_detail.html', {
+        'lead': lead
+    })
+
+# allow the user to add leads
 @login_required
 def add_lead(request):
     if request.method == 'POST':
