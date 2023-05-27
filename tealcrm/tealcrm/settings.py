@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'userprofile',
     'dashboard',
     'lead',
+    'client',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
