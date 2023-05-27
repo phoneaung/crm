@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 
@@ -33,10 +34,21 @@ def add_lead(request):
             lead.created_by = request.user
             lead.save()
 
-            return redirect('dashboard')
+            messages.success(request, "The lead was created.")
+
+            return redirect('leads_list')
     else:
         form = AddLeadForm()
 
     return render(request, 'lead/add_lead.html', {
         'form': form
     })
+
+# allow the user to delete leads
+@login_required
+def leads_delete(request, pk):
+    lead = get_object_or_404(Lead, created_by=request.user, pk=pk)
+    lead.delete()
+    messages.success(request, "The lead was deleted.")
+
+    return redirect('leads_list')
