@@ -17,7 +17,7 @@ Todolist
     -DONE Views/Forms for leads
     -DONE List out leads
     -DONE View detail page of leads
--Change and delete leads
+-DONE Change and delete leads
 -Convert leads to clients
 -Change and delete clients
 -Implement solution for teams

@@ -63,6 +63,7 @@ def leads_edit(request, pk):
 
         if form.is_valid():
             form.save()
+            form.form.form
 
             messages.success(request, "The changes were saved.")
             return redirect('leads_list')
