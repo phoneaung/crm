@@ -18,7 +18,7 @@ Todolist
     -DONE List out leads
     -DONE View detail page of leads
 -DONE Change and delete leads
--Convert leads to clients
+-DONE Convert leads to clients
 -Change and delete clients
 -Implement solution for teams
 -Implement a payment solution / Monthly recurring payments

@@ -8,4 +8,5 @@ urlpatterns = [
     path('add-lead/', views.add_lead, name='add_lead'),
     path('<int:pk>/delete/', views.leads_delete, name='leads_delete'),
     path('<int:pk>/edit/', views.leads_edit, name='leads_edit'),
+    path('<int:pk>/convert', views.leads_convert, name='leads_convert'),
 ]

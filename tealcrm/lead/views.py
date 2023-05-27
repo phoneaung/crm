@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 
 from .forms import AddLeadForm
 from .models import Lead
+from client.models import Client
 
 # shows the list of all the leads created by user
 @login_required
@@ -72,3 +73,23 @@ def leads_edit(request, pk):
     return render(request, 'lead/leads_edit.html', {
         'form': form
     })
+
+
+# allow the user to convert lead into client
+@login_required
+def leads_convert(request, pk):
+    lead = get_object_or_404(Lead, created_by=request.user, pk=pk)
+
+    client = Client.objects.create(
+        name=lead.name,
+        email=lead.email,
+        description=lead.description,
+        created_by=request.user
+    )
+
+    lead.converted_to_client = True
+    lead.save()
+
+    messages.success(request, "The lead was converted to a client.")
+
+    return redirect('leads_list')
