@@ -68,7 +68,7 @@ def leads_edit(request, pk):
             return redirect('leads_list')
     else:
         form = AddLeadForm(instance=lead)
-
+ 
     return render(request, 'lead/leads_edit.html', {
         'form': form
     })
