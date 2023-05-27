@@ -69,6 +69,6 @@ def leads_edit(request, pk):
     else:
         form = AddLeadForm(instance=lead)
 
-        return render(request, 'lead/leads_edit.html', {
-            'form': form
-        })
+    return render(request, 'lead/leads_edit.html', {
+        'form': form
+    })
