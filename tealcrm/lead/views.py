@@ -80,7 +80,7 @@ def leads_edit(request, pk):
 def leads_convert(request, pk):
     lead = get_object_or_404(Lead, created_by=request.user, pk=pk)
 
-    client = Client.objects.create(
+    Client.objects.create(
         name=lead.name,
         email=lead.email,
         description=lead.description,
