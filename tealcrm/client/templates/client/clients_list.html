@@ -23,7 +23,7 @@
 
                 <div class="flex justify-between">
                     <p class="py-4 px-2 w-full {% cycle 'bg-gray-100' '' %}">
-                        <a href="#">{{ client.name }}</a>
+                        <a href="{% url 'clients_detail' client.id %}">{{ client.name }}</a>
                     </p>
                 </div>
 
