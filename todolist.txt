@@ -23,8 +23,8 @@ Todolist
 -DONE Show a detail page of a client
 -DONE Change and delete clients
 -Implement solution for teams
-    -Create teams app
-    -Create models for teams
+    -DONE Create teams app
+    -DONE Create models for teams
     -Create new teams
     -You need to be a member of a team
 -Implement a payment solution / Monthly recurring payments
