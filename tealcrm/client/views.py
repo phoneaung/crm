@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 
 from .forms import AddClientForm
 from client.models import Client
+from team.models import Team
 
 
 # shows the list of all the clients created by user
@@ -33,8 +34,10 @@ def add_client(request):
         form = AddClientForm(request.POST)
 
         if form.is_valid():
+            team = Team.objects.filter(created_by=user)[0]
             client = form.save(commit=False)
             client.created_by = request.user
+            client.team = team
             client.save()
 
             messages.success(request, "The client was created.")
