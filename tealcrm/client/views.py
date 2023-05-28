@@ -64,7 +64,7 @@ def clients_edit(request, pk):
     client = get_object_or_404(Client, created_by=request.user, pk=pk)
     
     if request.method == 'POST':
-        form = AddclientForm(request.POST, instance=client)
+        form = AddClientForm(request.POST, instance=client)
 
         if form.is_valid():
             form.save()
@@ -72,7 +72,7 @@ def clients_edit(request, pk):
             messages.success(request, "The changes were saved.")
             return redirect('clients_list')
     else:
-        form = AddclientForm(instance=client)
+        form = AddClientForm(instance=client)
  
     return render(request, 'client/clients_edit.html', {
         'form': form
