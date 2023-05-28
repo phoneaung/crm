@@ -16,6 +16,11 @@
             <p class="mb-2">{{ client.description }}</p>
         {% endif %}
 
+        {% if client.email %}
+            <p class="font-semibold">Email</p>
+            <p class="mb-2">{{ client.email }}</p>
+        {% endif %}
+
         <p class="font-semibold">Created at</p>
         <p class="mb-2">{{ client.created_at | date:"d-M-Y, H:i" }}</p>
 
