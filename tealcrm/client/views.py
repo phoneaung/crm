@@ -43,7 +43,7 @@ def add_client(request):
     else:
         form = AddClientForm()
 
-    return render(request, 'client/clients_list.html', {
+    return render(request, 'client/add_client.html', {
         'form': form
     })
 
