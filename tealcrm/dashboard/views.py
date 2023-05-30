@@ -7,13 +7,13 @@ from team.models import Team
 
 @login_required
 def dashboard(request):
-    team = pass
+    team = Team.objects.filter(created_by=request.user)[0]
 
     # make these lists order by (-Created at) and show five of them 
-    leads = pass
-    clients = pass
+    leads = Lead.objects.filter(team=team).order_by('-created_at')[0:5]
+    clients = Client.objects.filter(team=team).order_by('-created_at')[0:5]
 
     return render(request, 'dashboard/dashboard.html', {
-        'leads': lead,
-        'clients': client
+        'leads': leads,
+        'clients': clients
     })
