@@ -4,8 +4,10 @@ from django.shortcuts import render, redirect, get_object_or_404
 
 from .forms import AddLeadForm
 from .models import Lead
+
 from client.models import Client
 from team.models import Team
+
 
 # shows the list of all the leads created by user
 @login_required

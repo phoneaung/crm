@@ -25,6 +25,6 @@ Todolist
 -Implement solution for teams
     -DONE Create teams app
     -DONE Create models for teams
-    -When create lead or client, make sure team is set
+    -When create lead or client, make sure team is set?
 -Implement a payment solution / Monthly recurring payments
 -Deploy
