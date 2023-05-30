@@ -26,7 +26,8 @@ Todolist
     -DONE Create teams app
     -DONE Create models for teams
     -DONE When create lead or client, make sure team is set?
-    -If you are not part a team, create one
-    -If you are owner of a team, make it possible to create one
+    -DONEIf you are not part a team, create one
+    -DONE If you are owner of a team, make it possible to create one
+    -Limit the number of leads and clients 
 -Implement a payment solution / Monthly recurring payments
 -Deploy

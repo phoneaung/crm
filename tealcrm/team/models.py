@@ -10,3 +10,12 @@ class Team(models.Model):
     def __str__(self):
         return self.name
 
+class Plan(models.Model):
+    name = models.TextField(max_length=50)
+    price = models.IntegerField()
+    description = models.TextField(blank=True, null=True)
+    max_leads = models.IntegerField()
+    max_clients = models.IntegerField()
+
+    def __str__(self):
+        return self.name
