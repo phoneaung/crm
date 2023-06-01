@@ -28,6 +28,11 @@ Todolist
     -DONE When create lead or client, make sure team is set?
     -DONEIf you are not part a team, create one
     -DONE If you are owner of a team, make it possible to create one
-    -Limit the number of leads and clients 
+    -DONE Limit the number of leads and clients 
+-Refactoring
+    -Install tailwind instead of using the CDN
+    -Add name spaces to all of the apps
+    -Replace the leads list, leads detail, leads delete, leads edit, leads add with a class based view
+        -give it a better name
 -Implement a payment solution / Monthly recurring payments
 -Deploy
