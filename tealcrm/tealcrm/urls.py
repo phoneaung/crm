@@ -18,7 +18,6 @@ from django.contrib.auth import views
 from django.urls import path, include
 
 from core.views import index, about
-from userprofile.views import signup, myaccount
 
 urlpatterns = [
     path('', index, name='index'),
@@ -27,8 +26,7 @@ urlpatterns = [
     path('dashboard/', include('dashboard.urls')),
     path('dashboard/team/', include('team.urls')),
     path('about/', about, name='about'),
-    path('dashboard/myaccount/', myaccount, name='myaccount'),
-    path('signup/', signup, name='signup'),
+    path('dashboard/', include('userprofile.urls')),
     path('log-in/', views.LoginView.as_view(template_name='userprofile/login.html'), name='login'),
     path('log-out/', views.LogoutView.as_view(template_name='userprofile/logout.html'), name='logout'),
     path('admin/', admin.site.urls),
