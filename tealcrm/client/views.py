@@ -45,7 +45,7 @@ def add_client(request):
 
             messages.success(request, "The client was created.")
 
-            return redirect('clients_list')
+            return redirect('clients:list')
     else:
         form = AddClientForm()
 
@@ -62,7 +62,7 @@ def clients_delete(request, pk):
     client.delete()
     messages.success(request, "The client was deleted.")
 
-    return redirect('clients_list')
+    return redirect('clients:list')
 
 
 # allow the user to edit leads
@@ -77,7 +77,7 @@ def clients_edit(request, pk):
             form.save()
 
             messages.success(request, "The changes were saved.")
-            return redirect('clients_list')
+            return redirect('clients:list')
     else:
         form = AddClientForm(instance=client)
  

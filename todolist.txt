@@ -30,7 +30,7 @@ Todolist
     -DONE If you are owner of a team, make it possible to create one
     -DONE Limit the number of leads and clients 
 -Refactoring
-    -Install tailwind instead of using the CDN
+    -DONE Install tailwind instead of using the CDN
     -Add name spaces to all of the apps
     -Replace the leads list, leads detail, leads delete, leads edit, leads add with a class based view
         -give it a better name
