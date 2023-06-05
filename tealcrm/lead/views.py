@@ -15,20 +15,24 @@ from client.models import Client
 from team.models import Team
 
 
-# shows the list of all the leads created by user
+# class based view
 class LeadListView(ListView):
+    # set the model attribute to Lead model, indicating that this view will work with lead objects
     model = Lead
 
+    # responsible for handling the incoming request
     @method_decorator(login_required)
     def dispatch(self, request: HttpRequest, *args: Any, **kwargs: Any) -> HttpResponse:
         return super().dispatch(request, *args, **kwargs)
 
+    # retrieve the queryset of lead objects to be displayed in the view
     def get_queryset(self) -> QuerySet[Any]:
         queryset = super(LeadListView, self).get_queryset()
         queryset = queryset.filter(created_by=self.request.user, converted_to_client=False)
 
         return queryset
-
+    
+# shows the list of all the leads created by user
 @login_required
 def leads_list(request):
     leads = Lead.objects.filter(created_by=request.user, converted_to_client=False)
