@@ -1,6 +1,12 @@
+from typing import Any
+from django import http
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
+from django.http import HttpRequest, HttpResponse
+from django.db.models.query import QuerySet
 from django.shortcuts import render, redirect, get_object_or_404
+from django.views.generic import ListView
 
 from .forms import AddLeadForm
 from .models import Lead
@@ -10,6 +16,19 @@ from team.models import Team
 
 
 # shows the list of all the leads created by user
+class LeadListView(ListView):
+    model = Lead
+
+    @method_decorator(login_required)
+    def dispatch(self, request: HttpRequest, *args: Any, **kwargs: Any) -> HttpResponse:
+        return super().dispatch(request, *args, **kwargs)
+
+    def get_queryset(self) -> QuerySet[Any]:
+        queryset = super(LeadListView, self).get_queryset()
+        queryset = queryset.filter(created_by=self.request.user, converted_to_client=False)
+
+        return queryset
+
 @login_required
 def leads_list(request):
     leads = Lead.objects.filter(created_by=request.user, converted_to_client=False)

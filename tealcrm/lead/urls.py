@@ -5,7 +5,7 @@ from . import views
 app_name = 'leads'
 
 urlpatterns = [
-    path('', views.leads_list, name='list'),
+    path('', views.LeadListView.as_view(), name='list'),
     path('<int:pk>/', views.leads_detail, name='detail'),
     path('add-lead/', views.add_lead, name='add'),
     path('<int:pk>/delete/', views.leads_delete, name='delete'),
