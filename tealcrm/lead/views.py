@@ -28,9 +28,8 @@ class LeadListView(ListView):
     # retrieve the queryset of lead objects to be displayed in the view
     def get_queryset(self) -> QuerySet[Any]:
         queryset = super(LeadListView, self).get_queryset()
-        queryset = queryset.filter(created_by=self.request.user, converted_to_client=False)
-
-        return queryset
+        
+        return queryset.filter(created_by=self.request.user, converted_to_client=False)
     
 # shows the list of all the leads created by user
 @login_required
