@@ -7,7 +7,7 @@ from django.utils.decorators import method_decorator
 from django.http import HttpRequest, HttpResponse
 from django.db.models.query import QuerySet
 from django.shortcuts import render, redirect, get_object_or_404
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, DeleteView
 
 from .forms import AddLeadForm
 from .models import Lead
@@ -16,7 +16,7 @@ from client.models import Client
 from team.models import Team
 
 
-# class based view
+# shows the list of all the leads created by user 
 class LeadListView(ListView):
     # set the model attribute to Lead model, indicating that this view will work with lead objects
     model = Lead
@@ -32,6 +32,7 @@ class LeadListView(ListView):
 
         return queryset.filter(created_by=self.request.user, converted_to_client=False)
 
+# show the details of the lead
 class LeadDetailView(DetailView):
     model = Lead
 
@@ -44,23 +45,6 @@ class LeadDetailView(DetailView):
 
         return queryset.filter(created_by=self.request.user, pk=self.kwargs.get('pk'))
 
-# shows the list of all the leads created by user
-@login_required
-def leads_list(request):
-    leads = Lead.objects.filter(created_by=request.user, converted_to_client=False)
-
-    return render(request, 'lead/leads_list.html', {
-        'leads': leads
-    })
-
-# show the details of the lead
-@login_required
-def leads_detail(request, pk):
-    lead = get_object_or_404(Lead, created_by=request.user, pk=pk)
-
-    return render(request, 'lead/leads_detail.html', {
-        'lead': lead
-    })
 
 # allow the user to add leads
 @login_required
@@ -87,6 +71,9 @@ def add_lead(request):
         'form': form,
         'team': team,
     })
+
+class LeadDeleteView(DeleteView):
+    model = DeleteView
 
 # allow the user to delete leads
 @login_required
