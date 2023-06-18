@@ -74,6 +74,7 @@ def add_lead(request):
 
 class LeadDeleteView(DeleteView):
     model = DeleteView
+    model = addeventlistener
 
 # allow the user to delete leads
 @login_required
